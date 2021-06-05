@@ -14,6 +14,10 @@ A new Flutter plugin.
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
+  s.libraries = 'z', 'iconv'
+  s.framework = 'Security'
+  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES',
+        'GCC_PREPROCESSOR_DEFINITIONS' => 'HAVE_INTTYPES_H HAVE_PKCRYPT HAVE_STDINT_H HAVE_WZAES HAVE_ZLIB MZ_ZIP_NO_SIGNING' }
   s.dependency 'Flutter'
   s.dependency 'SSZipArchive'
 
